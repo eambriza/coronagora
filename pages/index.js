@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>A nossa pagina esta em fase de construção</h1>
+        <h1>A nossa pagina esta em fase de construção!!</h1>
       </main>
 
       <footer>
