@@ -10,12 +10,19 @@ export default function Home() {
   return (
     <div className="container">
       <Head>
+        <meta charSet="utf-8" />
         <title>CoronAgora</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <main>
-        <h1>A nossa pagina esta em fase de construção!!</h1>
-      </main>
+
+      <body>
+        <h1>A nossa pagina esta em fase de construção.</h1>
+      </body>
+ 
+     
+
 
       <footer>
         <h3>CoronAgora</h3>
