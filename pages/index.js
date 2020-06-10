@@ -11,11 +11,12 @@ export default function Home() {
     <div className="container">
       <Head>
         <title>CoronAgora</title>
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
       <main>
-        <h1>A nossa pagina esta em fase de construção!</h1>
+        <h1>A nossa Pagina esta em fase de construção.</h1>
       </main>
 
       <footer>
