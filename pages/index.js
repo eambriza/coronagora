@@ -12,6 +12,7 @@ export default function Home() {
       <Head>
         <meta charSet="utf-8" />
         <title>CoronAgora</title>
+        <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
@@ -21,6 +22,7 @@ export default function Home() {
       </body>
  
      
+
 
       <footer>
         <h3>CoronAgora</h3>
