@@ -1,30 +1,97 @@
-import Head from "next/head";
-//import Link from "next/link";
+import Head from "../components/head";
+import NAV from "../components/nav";
+import FOOTER from "../components/footer";
+import STATS from "../components/stats";
+//
+import fetch from "node-fetch";
+//
 
-/* .banner {
-  border-top: 8px solid #32c8de;
-  background: #fff url("banner.jpg") repeat-x center center;
-} */
-
-export default function Home() {
+function Home({
+  day,
+  active,
+  activeT,
+  recovered,
+  recoveredT,
+  deaths,
+  deathsT,
+}) {
   return (
-    <div className="container">
-      <Head>
-        <meta charSet="utf-8" />
-        <title>CoronAgora</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      </Head>
+
+  
+
+    <div>
+      <Head title="Home" description="coronagora" />
+
+    
+
+
+     
+     
 
 
       <body>
-        <h1>A nossa pagina esta em fase de construção.</h1>
+        <NAV />
+        <STATS
+          day={day}
+          active={active}
+          activeT={activeT}
+          recovered={recovered}
+          recoveredT={recoveredT}
+          deaths={deaths}
+          deathsT={deathsT}
+        />
       </body>
- 
-     
-
-      <footer>
-        <h3>CoronAgora</h3>
-      </footer>
+      <FOOTER />
     </div>
   );
 }
+
+export async function getStaticProps() {
+  const res = await fetch(
+    `https://covid-193.p.rapidapi.com/statistics?country=Mozambique`,
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-host": "covid-193.p.rapidapi.com",
+        "x-rapidapi-key": "9610555f09mshbb22dfc95a4e6bbp1e8df6jsn8741d10c18ec",
+      },
+    }
+  );
+  const json = await res.json();
+  const activeT =
+    Math.round(
+      (json.response[0].cases.active / json.response[0].cases.total) * 100 * 10
+    ) / 10;
+  const recoveredT =
+    Math.round(
+      (json.response[0].cases.recovered / json.response[0].cases.total) *
+        100 *
+        10
+    ) / 10;
+  const deathsT =
+    Math.round(
+      (json.response[0].deaths.total / json.response[0].cases.total) * 100 * 10
+    ) / 10;
+  console.log("NEW CASES=   " + json.response[0].cases.new);
+  console.log("active CASES=  " + json.response[0].cases.active);
+  console.log("critical CASES=  " + json.response[0].cases.critical);
+  console.log("recovered CASES=  " + json.response[0].cases.recovered);
+  console.log("total CASES=  " + json.response[0].cases.total);
+  console.log("deaths.total CASES=  " + json.response[0].deaths.total);
+  console.log("tests.total CASES=  " + json.response[0].tests.total);
+  console.log("day CASES=  " + json.response[0].day);
+
+  return {
+    props: {
+      day: json.response[0].day,
+      active: json.response[0].cases.active,
+      activeT: activeT,
+      recovered: json.response[0].cases.recovered,
+      recoveredT: recoveredT,
+      deaths: json.response[0].deaths.total,
+      deathsT: deathsT,
+    },
+  };
+}
+
+export default Home;

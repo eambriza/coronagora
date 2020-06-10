@@ -1,6 +1,80 @@
-@import-normalize;
-.container {
-  max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+/*NAV*/
+.banner {
+  border-top: 8px solid #32c8de;
+  background: #fff url("/banner.jpg") repeat-x center center;
+}
+
+.banner .bannercontent {
+  padding: 150px 0;
+}
+
+.banner .container {
+  max-width: 800px;
+}
+
+.abanner {
+  padding: 180px;
+  font-size: xx-large;
+  color: whitesmoke;
+}
+
+/*FOOTER*/
+
+.footerabove {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.footerabove .post {
+  max-width: 750px;
+  margin: 0 auto;
+  font-size: 16px;
+  font-style: italic;
+}
+
+.footerabove h4 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+
+.footerabove .social a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  margin: 3px 1px;
+  font-size: 14px;
+  background: #d5d5d5;
+  color: #fff;
+  border-radius: 50%;
+  -webkit-transition: background 1s linear;
+  -moz-transition: background 1s linear;
+  -ms-transition: background 1s linear;
+  -o-transition: background 1s linear;
+  transition: background 1s linear;
+}
+.footerabove .social a:hover {
+  background: #32c8de;
+}
+
+.footer {
+  padding: 50px 0;
+  background: #eee;
+  text-align: center;
+}
+
+.navlink {
+  margin-bottom: 10px;
+  color: #999;
+}
+
+/*  STATS*/
+
+.test1 {
+  text-align: center;
+}
+.test {
+  padding: 50px;
+  display: inline-block;
 }
