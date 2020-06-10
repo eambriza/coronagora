@@ -25,6 +25,7 @@ export async function getStaticProps() {
   );
   const json = await res.json();
 
+
   return {
     props: {
       stars: 0,

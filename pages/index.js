@@ -16,10 +16,18 @@ function Home({
   deathsT,
 }) {
   return (
-    // <p>Next.js has {stars} ⭐️</p>
+
+  
 
     <div>
       <Head title="Home" description="coronagora" />
+
+    
+
+
+     
+     
+
 
       <body>
         <NAV />
