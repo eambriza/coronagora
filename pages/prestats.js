@@ -24,9 +24,7 @@ export async function getStaticProps() {
     }
   );
   const json = await res.json();
-  console.log(json.response[0]);
-  console.log(json.response[0].[0]);
-
+  
  /*  console.log(json.response[0].cases[0]);
   console.log(json.response[0].cases[1]);
   console.log(json.response[0].cases[2]);
