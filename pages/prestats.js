@@ -25,16 +25,6 @@ export async function getStaticProps() {
   );
   const json = await res.json();
 
-  /*  console.log(json.response[0].cases[0]);
-  console.log(json.response[0].cases[1]);
-  console.log(json.response[0].cases[2]);
-  console.log(json.response[0].cases[3]);
-  console.log(json.response[0].cases[5]);
-
-  console.log(json.response[0].deaths[2]);
-  console.log(json.response[0].tests[1]);
-  console.log(json.day); */
-
   return {
     props: {
       stars: 0,
