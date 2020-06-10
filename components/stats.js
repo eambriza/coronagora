@@ -1,22 +1,9 @@
 import React from "react";
 import styles from "./layout.module.css";
-//import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-//import Badge from "components/Badge/Badge.js";
 
-/*   <CustomDropdown
-      dropup
-      dropdownHeader="Dropdown header"
-      buttonText="Dropup"
-      buttonProps={{
-        round: true,
-        color: "info",
-      }}
-      dropdownList={["Mocambique", "Angola", "Portugal", "Brasil"]}
-    /> */
 const STATS = (props) => (
   <div className={styles.test1}>
     <h1>Mocambique</h1>
-
     <p>Ultimo Update: {props.day}</p>
     <div className={styles.test}>
       <h2>Activos</h2>
