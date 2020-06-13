@@ -1,11 +1,10 @@
 /*NAV*/
 .banner {
-  border-top: 8px solid #32c8de;
   background: #fff url("/banner.jpg") repeat-x center center;
 }
 
 .banner .bannercontent {
-  padding: 150px 0;
+  padding: 120px 0;
 }
 
 .banner .container {
@@ -65,8 +64,8 @@
 }
 
 .navlink {
-  margin-bottom: 10px;
-  color: #999;
+  margin-bottom: 1px;
+  color: #808080;
 }
 
 /*  STATS*/
@@ -77,4 +76,11 @@
 .test {
   padding: 50px;
   display: inline-block;
+}
+
+.test2 {
+  padding: 50px;
+  display: inline-block;
+  text-align: justify;
+  text-indent: 25px;
 }

@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 import Head from "../components/head";
 import NAV from "../components/nav";
 import FOOTER from "../components/footer";
@@ -5,6 +7,9 @@ import STATS from "../components/stats";
 //
 import fetch from "node-fetch";
 //
+
+import { ThemeProvider } from "@material-ui/core/styles";
+import theme from "../components/theme";
 
 function Home({
   day,
@@ -15,6 +20,11 @@ function Home({
   deaths,
   deathsT,
 }) {
+  useEffect(() => {
+    //getStaticProps();
+    //console.log("window.innerWidth", window.innerWidth);
+  });
+
   return (
     // <p>Next.js has {stars} ⭐️</p>
 
@@ -22,7 +32,9 @@ function Home({
       <Head title="Home" description="coronagora" />
 
       <body>
-        <NAV />
+        <ThemeProvider theme={theme}>
+          <NAV />{" "}
+        </ThemeProvider>
         <STATS
           day={day}
           active={active}
@@ -38,7 +50,7 @@ function Home({
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(
     `https://covid-193.p.rapidapi.com/statistics?country=Mozambique`,
     {
@@ -64,14 +76,14 @@ export async function getStaticProps() {
     Math.round(
       (json.response[0].deaths.total / json.response[0].cases.total) * 100 * 10
     ) / 10;
-  console.log("NEW CASES=   " + json.response[0].cases.new);
+  /*   console.log("NEW CASES=   " + json.response[0].cases.new);
   console.log("active CASES=  " + json.response[0].cases.active);
   console.log("critical CASES=  " + json.response[0].cases.critical);
   console.log("recovered CASES=  " + json.response[0].cases.recovered);
   console.log("total CASES=  " + json.response[0].cases.total);
   console.log("deaths.total CASES=  " + json.response[0].deaths.total);
   console.log("tests.total CASES=  " + json.response[0].tests.total);
-  console.log("day CASES=  " + json.response[0].day);
+  console.log("day CASES=  " + json.response[0].day); */
 
   return {
     props: {
