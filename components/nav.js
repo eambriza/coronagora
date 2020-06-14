@@ -1,27 +1,30 @@
 import Link from "next/link";
 import React from "react";
-import styles from "./layout.module.css";
+//import styles from "./layout.module.css";
 import Button from "@material-ui/core/Button";
 
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  root: {
-    fontFamily: "Segoe UI",
+  buttonCoronagora: {
+    fontFamily: "Raleway",
     fontSize: 34,
     left: 150,
-    //padding: 100,
-    //background: "pink",
-    /*  '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"', ****
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"', */
+    color: "#FFFFFF",
+    marginTop: "400",
+  },
+  banner: {
+    background: `url(/banner.jpg)`,
+    backgroundPosition: "center",
+    backgroundSize: "center",
+    backgroundRepeat: "no-repeat",
+    height: "35vh",
+    maxWidth: "800",
+    display: "flex",
+  },
+
+  bannercontent: {
+    padding: "120",
   },
 });
 
@@ -29,18 +32,11 @@ export default function STATS(props) {
   const classes = useStyles(props);
   return (
     <div>
-      <div className={styles.banner}>
-        <div className={styles.container}>
-          <div className={styles.bannercontent}>
-            <Button
-              href="/"
-              className={classes.root}
-              color="primary"
-              size="large"
-            >
-              coronAgora
-            </Button>
-          </div>
+      <div className={classes.banner}>
+        <div className={classes.bannercontent}>
+          {/*  <Button href="/" className={classes.buttonCoronagora} size="large">
+            coronAgora
+          </Button> */}
         </div>
       </div>
     </div>

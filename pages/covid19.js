@@ -1,4 +1,5 @@
 import Head from "../components/head";
+import APPBAR from "../components/appbar";
 import NAV from "../components/nav";
 import FOOTER from "../components/footer";
 import Codid19 from "../components/covid19";
@@ -11,6 +12,7 @@ function Covid19() {
     <div>
       <Head title="Covid19" description="coronagora" />
       <body>
+        <APPBAR />
         <ThemeProvider theme={theme}>
           <NAV />{" "}
         </ThemeProvider>

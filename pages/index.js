@@ -4,6 +4,7 @@ import Head from "../components/head";
 import NAV from "../components/nav";
 import FOOTER from "../components/footer";
 import STATS from "../components/stats";
+import APPBAR from "../components/appbar";
 //
 import fetch from "node-fetch";
 //
@@ -19,6 +20,7 @@ function Home({
   recoveredT,
   deaths,
   deathsT,
+  total,
 }) {
   useEffect(() => {
     //getStaticProps();
@@ -29,11 +31,12 @@ function Home({
     // <p>Next.js has {stars} ⭐️</p>
 
     <div>
-      <Head title="Home" description="coronagora" />
+      <Head title="Coronagora" description="coronagora" />
 
       <body>
+        <APPBAR />
         <ThemeProvider theme={theme}>
-          <NAV />{" "}
+          <NAV />
         </ThemeProvider>
         <STATS
           day={day}
@@ -43,6 +46,7 @@ function Home({
           recoveredT={recoveredT}
           deaths={deaths}
           deathsT={deathsT}
+          total={total}
         />
       </body>
       <FOOTER />
@@ -50,6 +54,10 @@ function Home({
   );
 }
 
+/* export async function getServerSideProps(country = "Mozambique") {
+  const res = await fetch(
+    `https://covid-193.p.rapidapi.com/statistics?country=` + { country } + ``,
+ */
 export async function getServerSideProps() {
   const res = await fetch(
     `https://covid-193.p.rapidapi.com/statistics?country=Mozambique`,
@@ -76,6 +84,11 @@ export async function getServerSideProps() {
     Math.round(
       (json.response[0].deaths.total / json.response[0].cases.total) * 100 * 10
     ) / 10;
+  const total = json.response[0].cases.total;
+
+  console.log(json.response[0]);
+  ////////////////////
+
   /*   console.log("NEW CASES=   " + json.response[0].cases.new);
   console.log("active CASES=  " + json.response[0].cases.active);
   console.log("critical CASES=  " + json.response[0].cases.critical);
@@ -94,6 +107,7 @@ export async function getServerSideProps() {
       recoveredT: recoveredT,
       deaths: json.response[0].deaths.total,
       deathsT: deathsT,
+      total: json.response[0].cases.total,
     },
   };
 }
