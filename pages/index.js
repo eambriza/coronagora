@@ -67,6 +67,7 @@ export default function Home() {
   return (
     <div>
       <Head title="Coronagora" description="coronagora" />
+
       <body>
         <APPBAR />
         <ThemeProvider theme={theme}>
