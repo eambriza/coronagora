@@ -1,25 +1,19 @@
-import React from "react";
-import styles from "./layout.module.css";
-import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
-import { makeStyles } from "@material-ui/core/styles";
-
-/// Card
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-///
-
-//// Menu button
-
+import { useState } from "react";
 import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-//// Menu button
+import Paper from "@material-ui/core/Paper";
+import React from "react";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import styles from "./layout.module.css";
 
 const useStyles = makeStyles({
   root: {
     fontFamily: "Raleway",
+    marginBottom: 15,
   },
   card: {
     display: "inline-block",
@@ -50,19 +44,28 @@ const useStyles = makeStyles({
     color: "#1abe81",
   },
   button: {
-    fontFamily: "Raleway", //"Segoe UI Symbol",
-    fontSize: 90,
+    fontFamily: "Raleway",
+    padding: 8,
+    fontSize: "45px",
     color: "#487867",
+    marginTop: "30px",
+    marginBottom: "30px",
     textTransform: "none",
   },
 });
 
 export default function STATS(props) {
   /// Menu button
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = useState(null);
+  //const [countryTranslated, setCountryTranslated] = useState("Mocambique");
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleCountryChange = (country) => {
+    props.getCountryDetails(country);
+    handleClose();
   };
 
   const handleClose = () => {
@@ -71,32 +74,42 @@ export default function STATS(props) {
   /// Menu button
   const classes = useStyles(props);
   return (
-    <Paper elevation={5}>
+    <Paper variant="outlined" elevation={8}>
       <div className={styles.test1}>
         <Button
           className={classes.button}
-          aria-controls="simple-menu"
+          variant="outlined"
+          aria-controls="fade-menu"
           aria-haspopup="true"
           onClick={handleClick}
         >
-          Mocambique
+          {props.country[1]}
         </Button>
         <Menu
-          id="simple-menu"
+          id="fade-menu"
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>Mocambique</MenuItem>
-          <MenuItem onClick={handleClose}>Angola</MenuItem>
-          <MenuItem onClick={handleClose}>Portugal</MenuItem>
-          <MenuItem onClick={handleClose}>Brasil</MenuItem>
+          <MenuItem
+            onClick={() => handleCountryChange(["Mozambique", "Moçambique"])}
+          >
+            Moçambique
+          </MenuItem>
+          <MenuItem onClick={() => handleCountryChange(["Angola", "Angola"])}>
+            Angola
+          </MenuItem>
+          <MenuItem
+            onClick={() => handleCountryChange(["Portugal", "Portugal"])}
+          >
+            Portugal
+          </MenuItem>
+          <MenuItem onClick={() => handleCountryChange(["Brazil", "Brasil"])}>
+            Brasil
+          </MenuItem>
         </Menu>
 
-        {/*     <Typography className={classes.root} variant="h1">
-          Mocambique
-        </Typography> */}
         <Typography className={classes.root} variant="h6">
           Ultimo Update: {props.day}
         </Typography>
