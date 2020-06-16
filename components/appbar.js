@@ -12,13 +12,8 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import Avatar from "@material-ui/core/Avatar";
-import Link from "next/link";
+import ListItem from "@material-ui/core/ListItem";
 import Button from "@material-ui/core/Button";
 
 const drawerWidth = 240;
@@ -84,24 +79,16 @@ const useStyles = makeStyles((theme) => ({
     color: "#487867",
     backgroundColor: "white",
   },
-
   button: {
     fontFamily: "Raleway",
-    //padding: 8,
     fontSize: "20px",
     color: "#487867",
-    //marginTop: "20px",
-    //marginBottom: "20px",
     textTransform: "none",
   },
-
   buttonDrawer: {
     fontFamily: "Raleway",
-    //padding: 8,
     fontSize: "15px",
     color: "#487867",
-    //marginTop: "20px",
-    //marginBottom: "20px",
     textTransform: "none",
   },
 }));
