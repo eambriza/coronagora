@@ -1,23 +1,12 @@
 import React from "react";
-import styles from "./layout.module.css";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
-
-///Card
-
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 
-/// card
-
-///Card
-
-/// card
 const useStyles = makeStyles({
   root: {
     fontFamily: "Raleway",
@@ -32,22 +21,16 @@ const useStyles = makeStyles({
     marginLeft: 500,
   },
   media: {
-    //height: 240,
     maxWidth: 800,
     height: 300,
   },
-
   test1: {
     textAlign: "center",
-    //maxWidth: 900,
-    //marginLeft: 500,
   },
-
   test2: {
     padding: "50px",
     display: "inline-block",
     textAlign: "justify",
-    //textIndent: "25px",
   },
 });
 
@@ -88,7 +71,6 @@ export default function COVID19(props) {
             </Card>
           </div>
         </div>
-
         <div className={classes.test1}>
           <div className={classes.test2}>
             <Card className={classes.root} elevation={18}>

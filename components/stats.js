@@ -55,9 +55,7 @@ const useStyles = makeStyles({
 });
 
 export default function STATS(props) {
-  /// Menu button
   const [anchorEl, setAnchorEl] = useState(null);
-  //const [countryTranslated, setCountryTranslated] = useState("Mocambique");
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -71,7 +69,7 @@ export default function STATS(props) {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  /// Menu button
+
   const classes = useStyles(props);
   return (
     <Paper variant="outlined" elevation={8}>
@@ -109,11 +107,9 @@ export default function STATS(props) {
             Brasil
           </MenuItem>
         </Menu>
-
         <Typography className={classes.root} variant="h6">
           Ultimo Update: {props.day}
         </Typography>
-
         <div>
           <Card className={classes.card} elevation={7}>
             <CardContent>

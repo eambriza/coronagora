@@ -59,7 +59,6 @@ export default function Home() {
     });
   };
 
-  // this effect runs when the component renders for the first time
   useEffect(() => {
     getCountryDetails(["Mozambique", "Moçambique"]);
   }, []);
@@ -67,7 +66,6 @@ export default function Home() {
   return (
     <div>
       <Head title="Coronagora" description="coronagora" />
-
       <body>
         <APPBAR />
         <ThemeProvider theme={theme}>

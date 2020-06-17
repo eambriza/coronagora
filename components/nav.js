@@ -18,7 +18,6 @@ const useStyles = makeStyles({
     resizeMode: "contain",
     marginTop: 55,
   },
-
   bannercontent: {
     padding: "120",
   },
